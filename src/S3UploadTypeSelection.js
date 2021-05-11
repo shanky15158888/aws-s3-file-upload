@@ -9,14 +9,19 @@ function S3UploadTypeSelection() {
         selectS3UploadType(type);
     }
     return (
-        <div>
-            <button type="button" className={`btn ${s3UploadType === "usingLambda"? "btn-primary": ""}`} onClick={() => handleClick("usingLambda")}>Upload using Lambda</button>
-            <button type="button" className={`btn ${s3UploadType === "usingPost"? "btn-primary": ""}`} onClick={() => handleClick("usingPost")}>Upload using HTTP Post</button>
-            <button type="button" className={`btn ${s3UploadType === "usingAmplify"? "btn-primary": ""}`} onClick={() => handleClick("usingAmplify")}>Upload Using Amplify</button>
-            <hr/>
-            { s3UploadType === "usingLambda" && <S3UploadWithLambda/> }
-            { s3UploadType === "usingPost" && <S3UploadWithHttpPost/> }
-            { s3UploadType === "usingAmplify" && <S3UploadWithAmplify/> }        
+        <div className="container">
+            <div className="row">
+                <div className="col-md-7">
+                    { s3UploadType === "usingLambda" && <S3UploadWithLambda/> }
+                    { s3UploadType === "usingPost" && <S3UploadWithHttpPost/> }
+                    { s3UploadType === "usingAmplify" && <S3UploadWithAmplify/> }
+                </div>
+                <div className="col-md-5 btndiv">
+                    <button type="button" className={`btn ${s3UploadType !== "usingLambda"? "btn-primary": "btn-secondary"}`} onClick={() => handleClick("usingLambda")}>Upload using Lambda</button>
+                    <button type="button" className={`btn ${s3UploadType !== "usingPost"? "btn-primary": "btn-secondary"}`} onClick={() => handleClick("usingPost")}>Upload using HTTP Post</button>
+                    <button type="button" className={`btn ${s3UploadType !== "usingAmplify"? "btn-primary": "btn-secondary"}`} onClick={() => handleClick("usingAmplify")}>Upload Using Amplify</button>
+                </div>
+            </div>
         </div>
     );
 }

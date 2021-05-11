@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.btndiv button{
+  display: block;
+}
+.btndiv button:not(button:nth-child(1)){
+  margin-top:10px
+}
+.row > div:first-child {
+  border-right: 1px solid #ccc;
+}
+

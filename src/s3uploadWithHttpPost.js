@@ -75,7 +75,6 @@ class S3UploadWithHttpPost extends React.Component {
                     <input type="submit" name="submit" value="Upload" className="btn" />
                     <div>{fileName}</div>
                 </form>
-                <hr />
             </div>
         )
     }

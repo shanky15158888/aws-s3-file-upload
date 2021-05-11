@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
         <h2>File Upload to S3</h2>
+        <hr/>
         <S3UploadTypeSelection/>
     </div>
   );
